@@ -4,8 +4,8 @@ package Model;
 public class Star extends CelestialBody {
 
 
-    public Star(String name, double mass, double radius, double effectiveTemp) {
-        super(name,mass,radius,effectiveTemp);
+    public Star(String name, double mass, double radius, double effectiveTemp,String pictureUrl) {
+        super(name,mass,radius,effectiveTemp,pictureUrl);
     }
 
 

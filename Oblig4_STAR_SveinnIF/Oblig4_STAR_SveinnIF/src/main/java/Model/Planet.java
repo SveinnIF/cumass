@@ -2,8 +2,8 @@ package Model;
 
 public class Planet extends NaturalSatellite {
 
-    public Planet(String name, double mass, double radius, double semiMajorAxis, double eccentricity, double orbitalPeriod, CelestialBody centralCelestialBody) {
-        super(name, mass, radius, semiMajorAxis, eccentricity, orbitalPeriod, centralCelestialBody);
+    public Planet(String name, double mass, double radius, double semiMajorAxis, double eccentricity, double orbitalPeriod, String pictureUrl) {
+        super(name, mass, radius, semiMajorAxis, eccentricity, orbitalPeriod, pictureUrl);
     }
 
 

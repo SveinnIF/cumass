@@ -1,7 +1,7 @@
 package Model;
 
 public abstract class CelestialBody {
-    private String name;
+    private String name,pictureUrl;
     private double radius,mass,effectiveTemp;
     private static final double Mjup = 1.898E27;
     private static final double Rjup = 71492;
@@ -14,11 +14,12 @@ public abstract class CelestialBody {
 
 
 
-    public CelestialBody(String name, double mass, double radius, double effectiveTemp) {
+    public CelestialBody(String name, double mass, double radius, double effectiveTemp, String pictureUrl) {
         this.name = name;
         this.radius = radius;
         this.mass = mass;
         this.effectiveTemp = effectiveTemp;
+        this.pictureUrl = pictureUrl;
     }
     public CelestialBody(String name, double mass, double radius) {
         this.name = name;

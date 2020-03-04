@@ -15,13 +15,13 @@ public class Application {
         app.config.enableWebjars();
 
         app.get("/planet-systems/:planet-system-id", new VueComponent("Planet-detail"));
-
+        app.get("/planet-systems", new VueComponent("planet-system-overview"));
 
         UniverseRepository PlanetSystemRepository = new UniverseRepository();
         PlanetSystemController planetController = new PlanetSystemController(PlanetSystemRepository);
 
-        // API
         app.get("api/planet-systems/:planet-system-id", planetController::getAllPlanets);
+        app.get("/api/planet-systems/", planetController::getAllPlanetSystems);
 
         app.get("/", ctx -> ctx.result("Hello, world"));
 
