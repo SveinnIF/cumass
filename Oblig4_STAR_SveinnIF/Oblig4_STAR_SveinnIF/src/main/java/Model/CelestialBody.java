@@ -21,12 +21,20 @@ public abstract class CelestialBody {
         this.effectiveTemp = effectiveTemp;
         this.pictureUrl = pictureUrl;
     }
-    public CelestialBody(String name, double mass, double radius) {
+    public CelestialBody(String name, double mass, double radius,String pictureUrl) {
         this.name = name;
         this.mass = mass;
         this.radius = radius;
+        this.pictureUrl = pictureUrl;
     }
 
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
+    }
 
     public double getRadius() {
         return radius;
@@ -73,6 +81,22 @@ public abstract class CelestialBody {
     }
     public String getRsun(){
         return radius / Rsun + " Rsun";
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    public void setMass(double mass) {
+        this.mass = mass;
+    }
+
+    public void setEffectiveTemp(double effectiveTemp) {
+        this.effectiveTemp = effectiveTemp;
     }
 
     @Override

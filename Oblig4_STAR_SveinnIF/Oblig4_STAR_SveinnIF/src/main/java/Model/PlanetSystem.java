@@ -8,11 +8,45 @@ public class PlanetSystem {
     private ArrayList<Planet> planetList;
     private Star centerStar;
     private String name;
+    String pictureUrl;
 
-    public PlanetSystem(String name, Star centerStar, ArrayList<Planet> planetList) {
+    public PlanetSystem(String name, Star centerStar, ArrayList<Planet> planetList,String pictureUrl) {
         this.name = name;
         this.centerStar = centerStar;
         this.planetList = planetList;
+        this.pictureUrl = pictureUrl;
+    }
+
+    public ArrayList<Planet> getPlanetList() {
+        return planetList;
+    }
+
+    public void setPlanetList(ArrayList<Planet> planetList) {
+        this.planetList = planetList;
+    }
+
+    public Star getCenterStar() {
+        return centerStar;
+    }
+
+    public void setCenterStar(Star centerStar) {
+        this.centerStar = centerStar;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 
     public Planet getPlanet(String planet) {
@@ -27,7 +61,7 @@ public class PlanetSystem {
 
 
     public ArrayList<Planet> getPlanets() {
-        return planetList;
+        return new ArrayList<Planet>(planetList);
     }
 
 //this is what i used before the project was re-written

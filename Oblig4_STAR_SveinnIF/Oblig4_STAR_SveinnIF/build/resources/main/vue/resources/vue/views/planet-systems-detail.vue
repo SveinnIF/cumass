@@ -4,7 +4,9 @@
             <img v-if="planetSystem.pictureUrl" class="cover-image" v-bind:src="planetSystem.pictureUrl">
             <img v-else class="cover-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/480px-Icon-round-Question_mark.svg.png">
 
-            {{console.log(this.planetSystem)}}
+            {{console.log(planetSystem.name)}}
+            {{console.log(planetSystem)}}
+            {{console.log(planets.length)}}
 
             <h1>{{planetSystem.name}}</h1>
             <p>The {{planetSystem.name}} has {{planets.length}} planets revolving around the star {{star.name}}.</p>

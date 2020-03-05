@@ -15,11 +15,11 @@ public class PlanetSystemController {
     }
 
     public void getAllPlanets(Context context) {
-        String systemId = context.pathParam(":planet-id");
+        String systemId = context.pathParam(":planet-system-id");
         String sortBy = context.queryParam("sort_by");
 
-        ArrayList<Planet> allPlanets = new ArrayList<>(universeRepository.getAllPlanets(systemId));
-
+        ArrayList<Planet> allPlanets = universeRepository.getAllPlanets(systemId); //i think it is because this is not a copy, this is the actual array that i am sorting and when i press null it
+                                                                                   //just prints the already sortet array
         if (sortBy != null) {
             switch (sortBy) {
                 case "name":
@@ -40,6 +40,19 @@ public class PlanetSystemController {
     public void getAllPlanetSystems(Context context) {
         ArrayList<PlanetSystem> allPlanetSystems = universeRepository.getAllPlanetSystems();
         context.json(allPlanetSystems);
+    }
+
+    public void getSinglePlanet(Context context){
+        String systemId = context.pathParam(":planet-system-id");
+        String planetId = context.pathParam(":planet-id");
+        Planet planet = universeRepository.getPlanet(systemId,planetId);
+        context.json(planet);
+    }
+
+    public void getSinglePlanetSystem(Context context){
+        String systemId = context.pathParam(":planet-system-id");
+        PlanetSystem system = universeRepository.getPlanetSystem(systemId);
+        context.json(system);
     }
 
 }
